@@ -1,0 +1,16 @@
+1. Wejść w "build_win" i usunąc całą jego zawartość z wyjątkiem folderów "Fonts" oraz "Images", a następnie uruchomić CMAKE. 
+2. Należy skopiować ścieżkę do folderu "SFML-2.5.1".
+3. Uruchomić "DungeonGame.sln" z folderu "build_win", następnie otworzyć zakładke "project" i "properties DungeonGame" (jęsli nie ma końcóki należy poczekać, aż się pojawi lub uruchomić ponownie).
+4. Wybrać "all configurations" oraz "all platforms", zamisat all platforms mozę być tylko x64. (Należy pamiętać o ciagłym zatwieredzaniu zmian !!!)
+5. Wejść w C/C++, w wierszu "Additional Include Directories" (Dodatkowe katalogi plików nagłówkowych) dodać skopiowaną ścieżkę z punktu 1. i dodać końcóke "\include" (D:\Hubert\JPO\DungeonGame\SFML-2.5.1\include;)
+6. Wejść w Linker (Konsolidator), w wierszu "Additional Library Directories" (Dodatkowe katalogi biblioteki) dodać skopiowaną ścieżkę z punktu 1. i dodać końcóke "\lib" (%(AdditionalLibraryDirectories)D:\Hubert\JPO\DungeonGame\SFML-2.5.1\lib)
+7. Przechodzimy do konfuguracji "Debug".
+8. Wchodzimy w "Configuration Properties" (Właściwości konfiguracji) i w podzakładkę "Debugging" (Debugowanie), w wierszu "Environment" (środowisko) dodać "PATH='ścieżka z puntku 1.'\bin" (PATH=C:\Users\Adrian\Desktop\Z\SFML-2.5.1\bin)
+9. Wchodzimy w "Linker" i w podzakłądkę "Input" (Dane wejściowe), w wierszu "Additional Dependencies" (Dodatkowe zależności) dodać "sfml-graphics-d.lib; sfml-window-d.lib; sfml-system-d.lib; sfml-audio-d.lib;"
+10. Przechodzimy do konfiguracji "Release".
+11. Wchodzimu w "Linker" i w podzakładke "Input", w wierszu "Additional Dependencies" dodać "winmm.lib; opengl32.lib; freetype.lib; sfml-graphics-s.lib; sfml-window-s.lib; sfml-system-s.lib; sfml-audio-s.lib;"
+12. Wchodzimy w "C/C++" i w podzakłądke "Preprocesor", w wierszu "Preprocessor Definitions" (Definicje preprocesora) dodać "SFML_STATIC" (%(PreprocessorDefinitions);SFML_STATIC;WIN32;_WINDOWS;_UNICODE;UNICODE;NDEBUG;CMAKE_INTDIR="Release")
+13. Można zamknąć oknow "Properties".
+Jeśli dalej nie chce się uruchomić należy wykonać poniższe kroki (nie jest to konieczne):
+14. W pliku main.cpp należy zmienić #include "Entity.h" na pełną ścieżkę do pliku Entity.h (np. #include "C:\Users\Adrian\Desktop\Dungeon Game to GItHub\include\Entity.h")
+15. Analogicznie należy zmienić #include "setup.h"

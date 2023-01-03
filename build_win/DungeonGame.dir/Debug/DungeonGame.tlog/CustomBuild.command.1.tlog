@@ -1,0 +1,10 @@
+^D:\HUBERT\JPO\DUNGEONGAME\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Hubert/JPO/DungeonGame -BD:/Hubert/JPO/DungeonGame/build_win --check-stamp-file D:/Hubert/JPO/DungeonGame/build_win/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

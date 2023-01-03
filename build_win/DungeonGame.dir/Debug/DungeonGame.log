@@ -1,0 +1,64 @@
+﻿  empty.cpp
+  main.cpp
+D:\Hubert\JPO\DungeonGame\include\Entity.h(80,63): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+D:\Hubert\JPO\DungeonGame\include\Entity.h(93,41): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+D:\Hubert\JPO\DungeonGame\include\Entity.h(108,70): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Hubert\JPO\DungeonGame\include\Entity.h(108,37): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Hubert\JPO\DungeonGame\include\Entity.h(135,64): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Hubert\JPO\DungeonGame\include\Entity.h(135,31): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Hubert\JPO\DungeonGame\include\Entity.h(156,23): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Hubert\JPO\DungeonGame\include\Entity.h(156,20): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Hubert\JPO\DungeonGame\include\Entity.h(161,28): warning C4244: "return": konwersja z "const T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Hubert\JPO\DungeonGame\include\Entity.h(166,28): warning C4244: "return": konwersja z "const T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Hubert\JPO\DungeonGame\include\Entity.h(171,1): warning C4311: "<function-style-cast>": obcięcie wskaźnika z "const sf::Texture *" do "int"
+D:\Hubert\JPO\DungeonGame\include\Entity.h(171,1): warning C4302: "<function-style-cast>": obcięcie z "const sf::Texture *" do "int"
+D:\Hubert\JPO\DungeonGame\src\main.cpp(92,36): warning C4552: „+”: Wynik wyrażenia nie jest używany
+D:\Hubert\JPO\DungeonGame\src\main.cpp(94,36): warning C4552: „+”: Wynik wyrażenia nie jest używany
+D:\Hubert\JPO\DungeonGame\src\main.cpp(110,77): warning C4244: "argument": konwersja z "unsigned int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Hubert\JPO\DungeonGame\src\main.cpp(110,59): warning C4244: "argument": konwersja z "unsigned int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Hubert\JPO\DungeonGame\src\main.cpp(120,71): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+D:\Hubert\JPO\DungeonGame\src\main.cpp(120,45): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+D:\Hubert\JPO\DungeonGame\src\main.cpp(121,80): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+D:\Hubert\JPO\DungeonGame\src\main.cpp(121,55): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+  Generowanie kodu...
+  DungeonGame.vcxproj -> D:\Hubert\JPO\DungeonGame\build_win\Debug\DungeonGame.exe
