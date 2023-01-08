@@ -1,13 +1,14 @@
 #pragma once
 
-const int numOfSheeps = 3;		//Iloœæ nagród - owiec
-int numOfEnemies = 3;			//Pocz¹tkowa iloœc przeciwników - wœciek³y t³um
+const int numOfSheeps = 3;		//IloÅ›Ä‡ nagrÃ³d - owiec
+int numOfEnemies = 3;			//PoczÄ…tkowa iloÅ›c przeciwnikÃ³w - wÅ›ciekÅ‚y tÅ‚um
 
-const int whenNewEnemie = 5;	//Kiedy ma siê pojawiæ nowy przeciwnik
+const int whenNewEnemie = 5;	//Kiedy ma siÄ™ pojawiÄ‡ nowy przeciwnik
 
-int points = 0;					//Pocz¹tkowa iloœæ punktów
+int points = 0;					//PoczÄ…tkowa iloÅ›Ä‡ punktÃ³w
 
-bool GameOver = false;			//Warunek dzia³ania gry
+bool GameOver = false;			//Warunek dziaÅ‚ania gry
 
- int COUNTER = 1;				//Dodatkowa zmienna zapewniaj¹ca pojawienie siê tylko jednego nowego przeciwnika
-	
+ int COUNTER = 1;				//Dodatkowa zmienna zapewniajÄ…ca pojawienie siÄ™ tylko jednego nowego przeciwnika
+
+float speed = 0.1f;				//PrÄ™dkoÅ›Ä‡ poruszania siÄ™ gracza - naleÅ¼y dostosowaÄ‡ jeÅ›li byÅ‚o by za szybko lub za wolno (zaleÅ¼y od sprzÄ™tu jaki siÄ™ uÅ¼ywa
