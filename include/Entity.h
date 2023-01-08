@@ -8,18 +8,18 @@
 
 
 ///////////////////////////////////////////////////////////
-// Funckja losuj¹ca liczbê
+// Funckja losujÄ…ca liczbÄ™
 ///////////////////////////////////////////////////////////
 //		
 // INPUT:
-//		size - maksymalna wartoœæ do jak¹ mo¿na wylosowaæ
+//		size - maksymalna wartoÅ›Ä‡ do jakÄ… moÅ¼na wylosowaÄ‡
 //		
 // OUTPUT:
 //		losowa liczba od 0 do liczby podanej jako argument funkcji
 //		
 // REMARKS:
-//		maksymalna liczba jak¹ mo¿na wylosowaæ jest o jeden mniejsza
-//		ni¿ liczba podana jako argument size
+//		maksymalna liczba jakÄ… moÅ¼na wylosowaÄ‡ jest o jeden mniejsza
+//		niÅ¼ liczba podana jako argument size
 //
 int random(int size)
 {
@@ -30,7 +30,7 @@ int random(int size)
 }
 
 ///////////////////////////////////////////////////////////
-// Klasa reprezentuj¹ca jednostke w mojej grze
+// Klasa reprezentujÄ…ca jednostke w mojej grze
 ///////////////////////////////////////////////////////////
 class Entity
 {
@@ -44,7 +44,7 @@ public:
 	// INPUT:
 	//		x - rozmiar w osi X jednostki
 	//		y - rozmiar w osi Y jednostki
-	//		textu - textura jaka bedzie mia³a jednostka
+	//		textu - textura jaka bedzie miaÅ‚a jednostka
 	//
 	Entity(float x, float y, std::string textu)
 	{
@@ -59,15 +59,15 @@ public:
 
 	
 	///////////////////////////////////////////////////////////
-	//Funkcja ustawiaj¹ca wcisniêcie/odpuszczenie danego klawisza w,a,s,d
+	//Funkcja ustawiajÄ…ca wcisniÄ™cie/odpuszczenie danego klawisza w,a,s,d
 	///////////////////////////////////////////////////////////
 	//		
 	// INPUT:
-	//		key - klawisz który ma byæ wciœniêty/niewciœniêty
+	//		key - klawisz ktÃ³ry ma byÄ‡ wciÅ›niÄ™ty/niewciÅ›niÄ™ty
 	//		checkPressed - czy klawisz jest wcisniety czy nie
 	// REMARKS:
-	//		Jeœli checkPressed == true to klawisz jest wcisniêty,
-	//		Jeœli checkPressed == false to kalwisz jest niewciœniety
+	//		JeÅ›li checkPressed == true to klawisz jest wcisniÄ™ty,
+	//		JeÅ›li checkPressed == false to kalwisz jest niewciÅ›niety
 	//
 	void processEvent(sf::Keyboard::Key key, bool checkPressed)
 	{
@@ -91,29 +91,29 @@ public:
 		}
 	}
 	///////////////////////////////////////////////////////////
-	// Funkcja aktualizuj¹ca pozycje gracza oraz sprawdzaj¹ca 
+	// Funkcja aktualizujÄ…ca pozycje gracza oraz sprawdzajÄ…ca 
 	// kolizje z przeciwnikami (Enemie) oraz nagrodami (sheep),
-	// a tak¿e dodaj¹ca nowego przeciwnika 
+	// a takÅ¼e dodajÄ…ca nowego przeciwnika 
 	///////////////////////////////////////////////////////////
 	//		
 	// INPUT:
-	//		window - okno na którym bêdziemy wyœwietlaæ dane
-	//		sheep - wektor w, którym znajduj¹ siê "owce" (nagrody)
-	//		Enemie - wektor w którym znajduje siê "wœciek³y t³um" (przeciwnicy)
+	//		window - okno na ktÃ³rym bÄ™dziemy wyÅ›wietlaÄ‡ dane
+	//		sheep - wektor w, ktÃ³rym znajdujÄ… siÄ™ "owce" (nagrody)
+	//		Enemie - wektor w ktÃ³rym znajduje siÄ™ "wÅ›ciekÅ‚y tÅ‚um" (przeciwnicy)
 	// REMARKS:
-	//		Jeœli któryœ z przycisków jest wcisniêty odpowiadaj¹ca mu wartoœæ up, 
-	//		down, left, right spowoduje poruszenie siê naszej postaci w dan¹ strone z odpowiedni¹ prêdkoœci¹
+	//		JeÅ›li ktÃ³ryÅ› z przyciskÃ³w jest wcisniÄ™ty odpowiadajÄ…ca mu wartoÅ›Ä‡ up, 
+	//		down, left, right spowoduje poruszenie siÄ™ naszej postaci w danÄ… strone z odpowiedniÄ… prÄ™dkoÅ›ciÄ…
 	// 
-	//		Jeœli nasza postaæ wejdzie w granice owcy to danej owcy zostanie wylosowana nowa pozycja
+	//		JeÅ›li nasza postaÄ‡ wejdzie w granice owcy to danej owcy zostanie wylosowana nowa pozycja
 	// 
-	//		Jeœli nasza postaæ wejdzie w granice enemie to nast¹pi koniec gry
+	//		JeÅ›li nasza postaÄ‡ wejdzie w granice enemie to nastÄ…pi koniec gry
 	// 
-	//		Gdy liczba punktów bêdzie równa wilokrotnoœci whenNewEnemie to pojawi siê nowy przeciwnik
+	//		Gdy liczba punktÃ³w bÄ™dzie rÃ³wna wilokrotnoÅ›ci whenNewEnemie to pojawi siÄ™ nowy przeciwnik
 	//
 	void update(sf::RenderWindow& window, std::vector<Entity>& sheep, std::vector<Entity>& Enemie)
 	{
 		sf::Vector2f movement{ 0,0 };
-		float speed = 0.1f;
+		
 		if (up)
 		{
 			movement.y -= speed;
@@ -189,11 +189,11 @@ public:
 	}
 
 	///////////////////////////////////////////////////////////
-	// Funkcja wyœwietlaj¹ca aktualn¹ pozycjê jednostki w oknie
+	// Funkcja wyÅ›wietlajÄ…ca aktualnÄ… pozycjÄ™ jednostki w oknie
 	///////////////////////////////////////////////////////////
 	//		
 	// INPUT:
-	//		window - okno na którym bêdziemy wyœwietlaæ dane
+	//		window - okno na ktÃ³rym bÄ™dziemy wyÅ›wietlaÄ‡ dane
 	//
 	void drawTo(sf::RenderWindow& window)
 	{
@@ -201,11 +201,11 @@ public:
 	}
 
 	///////////////////////////////////////////////////////////
-	// Funkcja ustawiaj¹ca texture danej jednostki 
+	// Funkcja ustawiajÄ…ca texture danej jednostki 
 	///////////////////////////////////////////////////////////
 	//		
 	// INPUT:
-	//		textu - textura jaka ma byæ ustawiona
+	//		textu - textura jaka ma byÄ‡ ustawiona
 	//
 	void setTexture(std::string textu) {
 		texture.loadFromFile(textu);
@@ -213,12 +213,12 @@ public:
 	}
 
 	///////////////////////////////////////////////////////////
-	// Funkcja ustawiaj¹ca pozycje danej jednostki
+	// Funkcja ustawiajÄ…ca pozycje danej jednostki
 	///////////////////////////////////////////////////////////
 	//		
 	// INPUT:
-	//		x - pixel na osi X gdzie ma byæ ustawiona jednostka
-	//		y - pixel na osi Y gdzie ma byæ ustawiona jednostka
+	//		x - pixel na osi X gdzie ma byÄ‡ ustawiona jednostka
+	//		y - pixel na osi Y gdzie ma byÄ‡ ustawiona jednostka
 	//
 	void setPosition(int x, int y)
 	{
@@ -226,7 +226,7 @@ public:
 	}
 
 	///////////////////////////////////////////////////////////
-	// Funkcja zwracaj¹ca pozycje jednostki w osi X
+	// Funkcja zwracajÄ…ca pozycje jednostki w osi X
 	///////////////////////////////////////////////////////////
 	//		
 	// OUTPUT:
@@ -238,7 +238,7 @@ public:
 	}
 
 	///////////////////////////////////////////////////////////
-	// Funkcja zwracaj¹ca pozycje jednostki w osi Y
+	// Funkcja zwracajÄ…ca pozycje jednostki w osi Y
 	///////////////////////////////////////////////////////////
 	//		
 	// OUTPUT:
@@ -250,7 +250,7 @@ public:
 	}
 
 	///////////////////////////////////////////////////////////
-	// Funkcja zwracaj¹ca teksture jednostki 
+	// Funkcja zwracajÄ…ca teksture jednostki 
 	///////////////////////////////////////////////////////////
 	//		
 	// OUTPUT:
@@ -262,11 +262,11 @@ public:
 	}
 
 	///////////////////////////////////////////////////////////
-	// Funkcja ustawiaj¹ca texture
+	// Funkcja ustawiajÄ…ca texture
 	///////////////////////////////////////////////////////////
 	//		
 	// INPUT:
-	//		mob - textura jak¹ chcemy ustawiæ
+	//		mob - textura jakÄ… chcemy ustawiÄ‡
 	//
 	void setTexture(sf::Texture &mob)
 	{
