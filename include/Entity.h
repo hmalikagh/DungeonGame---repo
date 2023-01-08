@@ -7,7 +7,20 @@
 #include "Setup.h"
 
 
-
+///////////////////////////////////////////////////////////
+// Funckja losuj¹ca liczbê
+///////////////////////////////////////////////////////////
+//		
+// INPUT:
+//		size - maksymalna wartoœæ do jak¹ mo¿na wylosowaæ
+//		
+// OUTPUT:
+//		losowa liczba od 0 do liczby podanej jako argument funkcji
+//		
+// REMARKS:
+//		maksymalna liczba jak¹ mo¿na wylosowaæ jest o jeden mniejsza
+//		ni¿ liczba podana jako argument size
+//
 int random(int size)
 {
 	std::random_device rd;
@@ -16,13 +29,23 @@ int random(int size)
 	return uni_distr(mtRandomEngine);
 }
 
+///////////////////////////////////////////////////////////
+// Klasa reprezentuj¹ca jednostke w mojej grze
+///////////////////////////////////////////////////////////
 class Entity
 {
 public:
-	sf::RectangleShape rect;
-	sf::Texture texture;
 	
-
+	
+	///////////////////////////////////////////////////////////
+	// Konsrtyktor klasy
+	///////////////////////////////////////////////////////////
+	//		
+	// INPUT:
+	//		x - rozmiar w osi X jednostki
+	//		y - rozmiar w osi Y jednostki
+	//		textu - textura jaka bedzie mia³a jednostka
+	//
 	Entity(float x, float y, std::string textu)
 	{
 		rect.setSize(sf::Vector2f(x, y));
@@ -35,11 +58,19 @@ public:
 	}
 
 	
-
-	void processEvent(sf::Keyboard::Key key, bool checkPressed, sf::RenderWindow& window)
+	///////////////////////////////////////////////////////////
+	//Funkcja ustawiaj¹ca wcisniêcie/odpuszczenie danego klawisza w,a,s,d
+	///////////////////////////////////////////////////////////
+	//		
+	// INPUT:
+	//		key - klawisz który ma byæ wciœniêty/niewciœniêty
+	//		checkPressed - czy klawisz jest wcisniety czy nie
+	// REMARKS:
+	//		Jeœli checkPressed == true to klawisz jest wcisniêty,
+	//		Jeœli checkPressed == false to kalwisz jest niewciœniety
+	//
+	void processEvent(sf::Keyboard::Key key, bool checkPressed)
 	{
-		
-
 		if (checkPressed == true)
 		{
 			if (key == sf::Keyboard::W)
@@ -50,7 +81,6 @@ public:
 				left = true;
 			if (key == sf::Keyboard::D)
 				right = true;
-
 		}
 		if (checkPressed == false)
 		{
@@ -59,10 +89,27 @@ public:
 			left = false;
 			right = false;
 		}
-
-
 	}
-
+	///////////////////////////////////////////////////////////
+	// Funkcja aktualizuj¹ca pozycje gracza oraz sprawdzaj¹ca 
+	// kolizje z przeciwnikami (Enemie) oraz nagrodami (sheep),
+	// a tak¿e dodaj¹ca nowego przeciwnika 
+	///////////////////////////////////////////////////////////
+	//		
+	// INPUT:
+	//		window - okno na którym bêdziemy wyœwietlaæ dane
+	//		sheep - wektor w, którym znajduj¹ siê "owce" (nagrody)
+	//		Enemie - wektor w którym znajduje siê "wœciek³y t³um" (przeciwnicy)
+	// REMARKS:
+	//		Jeœli któryœ z przycisków jest wcisniêty odpowiadaj¹ca mu wartoœæ up, 
+	//		down, left, right spowoduje poruszenie siê naszej postaci w dan¹ strone z odpowiedni¹ prêdkoœci¹
+	// 
+	//		Jeœli nasza postaæ wejdzie w granice owcy to danej owcy zostanie wylosowana nowa pozycja
+	// 
+	//		Jeœli nasza postaæ wejdzie w granice enemie to nast¹pi koniec gry
+	// 
+	//		Gdy liczba punktów bêdzie równa wilokrotnoœci whenNewEnemie to pojawi siê nowy przeciwnik
+	//
 	void update(sf::RenderWindow& window, std::vector<Entity>& sheep, std::vector<Entity>& Enemie)
 	{
 		sf::Vector2f movement{ 0,0 };
@@ -127,8 +174,8 @@ public:
 		}
 
 
-		
-		if (points % 5 == 0 && COUNTER == 0)
+		//New enemie
+		if (points % whenNewEnemie == 0 && COUNTER == 0)
 		{
 			
 			Entity tmp(50, 50, "images\\angry_mob.png");
@@ -141,34 +188,89 @@ public:
 		rect.move(movement);
 	}
 
+	///////////////////////////////////////////////////////////
+	// Funkcja wyœwietlaj¹ca aktualn¹ pozycjê jednostki w oknie
+	///////////////////////////////////////////////////////////
+	//		
+	// INPUT:
+	//		window - okno na którym bêdziemy wyœwietlaæ dane
+	//
 	void drawTo(sf::RenderWindow& window)
 	{
 		window.draw(rect);
 	}
 
+	///////////////////////////////////////////////////////////
+	// Funkcja ustawiaj¹ca texture danej jednostki 
+	///////////////////////////////////////////////////////////
+	//		
+	// INPUT:
+	//		textu - textura jaka ma byæ ustawiona
+	//
 	void setTexture(std::string textu) {
 		texture.loadFromFile(textu);
 		rect.setTexture(&texture);
 	}
 
+	///////////////////////////////////////////////////////////
+	// Funkcja ustawiaj¹ca pozycje danej jednostki
+	///////////////////////////////////////////////////////////
+	//		
+	// INPUT:
+	//		x - pixel na osi X gdzie ma byæ ustawiona jednostka
+	//		y - pixel na osi Y gdzie ma byæ ustawiona jednostka
+	//
 	void setPosition(int x, int y)
 	{
 		rect.setPosition(x, y);
 	}
 
+	///////////////////////////////////////////////////////////
+	// Funkcja zwracaj¹ca pozycje jednostki w osi X
+	///////////////////////////////////////////////////////////
+	//		
+	// OUTPUT:
+	//		Pozycja na osi X jednostki
+	//
 	int getPositionX()
 	{
 		return rect.getPosition().x;
 	}
 
+	///////////////////////////////////////////////////////////
+	// Funkcja zwracaj¹ca pozycje jednostki w osi Y
+	///////////////////////////////////////////////////////////
+	//		
+	// OUTPUT:
+	//		Pozycja na osi Y jednostki
+	//
 	int getPositionY()
 	{
 		return rect.getPosition().y;
 	}
 
+	///////////////////////////////////////////////////////////
+	// Funkcja zwracaj¹ca teksture jednostki 
+	///////////////////////////////////////////////////////////
+	//		
+	// OUTPUT:
+	//		Textura jednostki w kodzie szesnatkowym
+	//
 	int getTexture()
 	{
 		return int(rect.getTexture());
+	}
+
+	///////////////////////////////////////////////////////////
+	// Funkcja ustawiaj¹ca texture
+	///////////////////////////////////////////////////////////
+	//		
+	// INPUT:
+	//		mob - textura jak¹ chcemy ustawiæ
+	//
+	void setTexture(sf::Texture &mob)
+	{
+		rect.setTexture(&mob);
 	}
 
 private:
@@ -178,7 +280,8 @@ private:
 	bool right;
 
 	
-
+	sf::RectangleShape rect;
+	sf::Texture texture;
 	
 	
 	sf::FloatRect nextPosition;
