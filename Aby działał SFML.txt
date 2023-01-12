@@ -1,7 +1,7 @@
 1. Wejść w "build_win" i uruchomić CMAKE. 
 2. Należy skopiować ścieżkę do folderu "SFML-2.5.1".
-3. Uruchomić "DungeonGame.sln" z folderu "build_win", następnie otworzyć zakładke "project" i "properties DungeonGame" (jęsli nie ma końcóki należy poczekać, aż się pojawi lub uruchomić ponownie).
-4. Wybrać "all configurations" oraz "all platforms", zamisat all platforms mozę być tylko x64. (Należy pamiętać o ciagłym zatwieredzaniu zmian !!!)
+3. Uruchomić "DungeonGame.sln" z folderu "build_win", następnie otworzyć zakładke "project" i "properties DungeonGame" (jęsli nie ma końcóki należy poczekać, aż się pojawi lub włączyć mian.cpp lub uruchomić ponownie).
+4. Wybrać "all configurations"(wszystkie konfiguracje) oraz "all platforms" (wszytskie platformy), zamisat all platforms mozę być tylko x64. (Należy pamiętać o ciagłym zatwieredzaniu zmian !!!)
 5. Wejść w C/C++, w wierszu "Additional Include Directories" (Dodatkowe katalogi plików nagłówkowych) dodać skopiowaną ścieżkę z punktu 2. i dodać końcóke "\include" (D:\Hubert\JPO\DungeonGame\SFML-2.5.1\include;)
 6. Wejść w Linker (Konsolidator), w wierszu "Additional Library Directories" (Dodatkowe katalogi biblioteki) dodać skopiowaną ścieżkę z punktu 2 i dodać końcóke "\lib" (%(AdditionalLibraryDirectories)D:\Hubert\JPO\DungeonGame\SFML-2.5.1\lib)
 7. Przechodzimy do konfuguracji "Debug".
